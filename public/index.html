@@ -47,4 +47,14 @@
   <!-- indexedDB js entry point -->
   <script src="./js/idb.js"></script>
 </body>
+<!--service worker registration-->
+<script>
+  (function() {
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+      .then(() => console.log('Service Worker has been registered successfully!'))
+      .catch(error => console.log('Service Worker registration has failed:', error));
+    }
+  })();
+</script>
 </html>
